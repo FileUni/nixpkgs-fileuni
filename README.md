@@ -32,6 +32,12 @@ If you are pinned to an older commit without `flake.lock`, use the latest branch
 nix run github:FileUni/nixpkgs-fileuni/main#fileuni -- --help
 ```
 
+You can also force a fresh fetch:
+
+```bash
+nix run --refresh github:FileUni/nixpkgs-fileuni#fileuni -- --help
+```
+
 ## Legacy Nix
 
 If you are not using flakes:

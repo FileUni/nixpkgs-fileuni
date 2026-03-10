@@ -72,5 +72,10 @@ If you see a lock-file write error while using `github:FileUni/nixpkgs-fileuni`,
 you are likely pinned to an older commit. Refresh to the latest commit or run once with:
 
 ```bash
+nix run --refresh github:FileUni/nixpkgs-fileuni#fileuni -- --help
+nix run github:FileUni/nixpkgs-fileuni/main#fileuni -- --help
+```
+
+Either command will bypass the stale cached revision and pick up the committed `flake.lock`.
 nix run github:FileUni/nixpkgs-fileuni/main#fileuni -- --help
 ```
