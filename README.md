@@ -26,6 +26,12 @@ Run without installing:
 nix run github:FileUni/nixpkgs-fileuni#fileuni -- --help
 ```
 
+If you are pinned to an older commit without `flake.lock`, use the latest branch ref:
+
+```bash
+nix run github:FileUni/nixpkgs-fileuni/main#fileuni -- --help
+```
+
 ## Legacy Nix
 
 If you are not using flakes:

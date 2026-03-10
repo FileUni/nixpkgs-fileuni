@@ -67,3 +67,10 @@ If you want to inspect the resolved package:
 ```bash
 nix flake show github:FileUni/nixpkgs-fileuni
 ```
+
+If you see a lock-file write error while using `github:FileUni/nixpkgs-fileuni`,
+you are likely pinned to an older commit. Refresh to the latest commit or run once with:
+
+```bash
+nix run github:FileUni/nixpkgs-fileuni/main#fileuni -- --help
+```
