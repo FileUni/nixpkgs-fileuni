@@ -34,7 +34,6 @@ stdenvNoCC.mkDerivation {
     description = "FileUni CLI";
     homepage = "https://fileuni.com";
     mainProgram = "fileuni";
-    license = licenses.unfree;
     platforms = builtins.attrNames sources;
     sourceProvenance = with sourceTypes; [ binaryNativeCode ];
   };
