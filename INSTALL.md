@@ -77,5 +77,3 @@ nix run github:FileUni/nixpkgs-fileuni/main#fileuni -- --help
 ```
 
 Either command will bypass the stale cached revision and pick up the committed `flake.lock`.
-nix run github:FileUni/nixpkgs-fileuni/main#fileuni -- --help
-```

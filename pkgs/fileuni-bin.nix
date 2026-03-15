@@ -1,13 +1,13 @@
-{ lib, stdenvNoCC, fetchzip }:
+{ lib, stdenvNoCC, fetchurl, unzip }:
 
 let
   pname = "fileuni";
-  version = "0.0.2-alpha2";
+  version = "0.0.2-alpha4.11.20260316002214";
   sources = {
-    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha2/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-0wbSaBIn6W0F2zZbNsef54qqp9FFKAqnjgEH9Oc7pzY="; };
-    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha2/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-AscTq1z+VNeUIn8ovUj9PK15jSHbF9tizDmDlLZvmCo="; };
-    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha2/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-P9zefoQM6jdSQBIktM1pbY46DjLH28p7NTa3JLzlrZo="; };
-    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha2/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-mUF/35DUWHHIssR5YNdujYJBMBB9LAz5tGxUvmLCpGM="; };
+    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha4.11_20260316002214/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-neNwcDOVp85rstg7QIVr9L+tBVAO4Hb7kLMuwlrVcZQ="; };
+    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha4.11_20260316002214/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-os6N5C88/QD0nt3GQA+tk1+SofCPJis/4+QFlCokvZU="; };
+    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha4.11_20260316002214/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-dtF5gINGp0DgPL/4J4OIbC4aGxUnO7gOu/eozBAIPHs="; };
+    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha4.11_20260316002214/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-wb74ckpHrablG4hPBi0geBvcAr9Yeq0DPDhrccd3qmk="; };
   };
   source = sources.${stdenvNoCC.hostPlatform.system}
     or (throw "Unsupported system for FileUni: ${stdenvNoCC.hostPlatform.system}");
@@ -15,18 +15,28 @@ in
 stdenvNoCC.mkDerivation {
   inherit pname version;
 
-  src = fetchzip {
+  src = fetchurl {
     url = source.url;
     hash = source.hash;
-    stripRoot = false;
   };
+
+  nativeBuildInputs = [ unzip ];
 
   dontConfigure = true;
   dontBuild = true;
 
+  unpackPhase = ''
+    runHook preUnpack
+    mkdir -p source
+    unzip -q "$src" -d source
+    runHook postUnpack
+  '';
+
+  sourceRoot = "source";
+
   installPhase = ''
     runHook preInstall
-    install -Dm755 "$src/fileuni" "$out/bin/fileuni"
+    install -Dm755 "$sourceRoot/fileuni" "$out/bin/fileuni"
     runHook postInstall
   '';
 
