@@ -2,12 +2,12 @@
 
 let
   pname = "fileuni";
-  version = "0.0.2-alpha4.11.20260316002214";
+  version = "0.0.3";
   sources = {
-    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha4.11_20260316002214/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-neNwcDOVp85rstg7QIVr9L+tBVAO4Hb7kLMuwlrVcZQ="; };
-    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha4.11_20260316002214/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-os6N5C88/QD0nt3GQA+tk1+SofCPJis/4+QFlCokvZU="; };
-    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha4.11_20260316002214/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-dtF5gINGp0DgPL/4J4OIbC4aGxUnO7gOu/eozBAIPHs="; };
-    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.2-alpha4.11_20260316002214/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-wb74ckpHrablG4hPBi0geBvcAr9Yeq0DPDhrccd3qmk="; };
+    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.3/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-G9IdmtXoZi7af0x+BxgHfaxMf6bTMl0VlCZPLcfc238="; };
+    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.3/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-FMvLnLIDtIqjNdnfYU1vqGU+hlc1qEqbaIyH3vs20Pc="; };
+    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.3/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-4rI281QKk7ZSTF7ZGdwv02BJJVXlt+nn5oO6u7LnM98="; };
+    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.3/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-GuHfFSWkct1BJeH/fXVFONbnBqG2jlPEuY/kNC002YY="; };
   };
   source = sources.${stdenvNoCC.hostPlatform.system}
     or (throw "Unsupported system for FileUni: ${stdenvNoCC.hostPlatform.system}");
