@@ -2,12 +2,12 @@
 
 let
   pname = "fileuni";
-  version = "0.0.4-alpha.9.20260317182019";
+  version = "0.0.4-alpha.10.20260318223617";
   sources = {
-    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.9_20260317182019/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-f8KyAbr+pYTwSTz6DlTsiiuwuApwM/0iv4ISxfDd7Xs="; };
-    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.9_20260317182019/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-kzvFj8saJsr0w1wTf6HVUpQcSBGmEpwPvnbcKFb/AMg="; };
-    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.9_20260317182019/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-fSgtQGJtfhmAxlN11McC03XsteY240CHmN70oWpbYN0="; };
-    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.9_20260317182019/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-xFpnbYZ/E5p8cfu25C+b5L3+qE/h3U6jgzScaDwt548="; };
+    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.10_20260318223617/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-9Ke8cHkW66BY8A886S8+qJL0ZaZv8ODUnTzZv4nLH4o="; };
+    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.10_20260318223617/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-OkBpC4Dnv+ud7/9+KsPE4bvpn6LmS3/gDGSvxrfvXWQ="; };
+    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.10_20260318223617/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-rNbM4AeTMtBi+uC4e75GCkQXwDi1Vq1d1B4gxWVkksA="; };
+    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.10_20260318223617/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-P/DeQnzcMiS21pVTlqBaHjC4qAifPkLgShl1pFF449U="; };
   };
   source = sources.${stdenvNoCC.hostPlatform.system}
     or (throw "Unsupported system for FileUni: ${stdenvNoCC.hostPlatform.system}");
