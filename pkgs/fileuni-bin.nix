@@ -2,12 +2,12 @@
 
 let
   pname = "fileuni";
-  version = "0.0.4-alpha.12.20260319144653";
+  version = "0.0.4";
   sources = {
-    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.12_20260319144653/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-h8paoypptYziQw9Iz023elSBzM+7n8/4vVV8h2jLm1E="; };
-    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.12_20260319144653/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-mNMkOPbJN8KRet2YJd/Ry1Lq3k34Qvigv9u9xJXmgHQ="; };
-    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.12_20260319144653/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-0Z8EUstRSZDZ3w9myLC5q4XNGb+AZHCovxKBqUKrYz0="; };
-    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4-alpha.12_20260319144653/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-U0dN/v6e+DPLvAA8xzGOi/Yu07zoqH/ddu9DRLXTvVQ="; };
+    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-yNUNEkh1RHOYkgCl+qiovqko+Cj6VTZVGqGgfWcz9p0="; };
+    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-yf4o2Tiuu/NE5IuaRrEGj6CZpTBEV1QEmNhM1ApO5yQ="; };
+    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-DeWBpF5rc5+lczoLrKYcuEjRUZxBjnsm5206iaFXVWM="; };
+    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.0.4/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-V/957WiCTGCt05USIyxDGuKAl5yVf1AiWmBTZmjAlzk="; };
   };
   source = sources.${stdenvNoCC.hostPlatform.system}
     or (throw "Unsupported system for FileUni: ${stdenvNoCC.hostPlatform.system}");
