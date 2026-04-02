@@ -2,12 +2,12 @@
 
 let
   pname = "fileuni";
-  version = "0.1.1";
+  version = "0.1.2";
   sources = {
-    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.1/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-H7hqbqsVAx5Fd/igaK47Tkx+VOFKFHfw4PWRKd9UpbU="; };
-    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.1/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-2E/nj565CeYH78C9rVXXC4cbKd0UDz1kkpd7ucdJvb8="; };
-    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.1/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-AYtu93Y/FG82EW53truHUbbzgLo7DFAu/tZwmH6RN9I="; };
-    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.1/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-oIprhnHCa3SgyDLZwYgLBNYSmPIB8BIB+HKwSgL9XyA="; };
+    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.2/FileUni-cli-x86_64-linux-gnu.zip"; hash = "sha256-yfO8p4GTv5jWFNI71PBlLLeFUVBpSE6mwGHIaLwAgxI="; };
+    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.2/FileUni-cli-aarch64-linux-gnu.zip"; hash = "sha256-ko2XD+BW7x5T3e9pO0dZygsprwaZ5tdci8gOEvmWcMs="; };
+    "x86_64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.2/FileUni-cli-x86_64-macos-darwin.zip"; hash = "sha256-8QQqxhhpYYOtTThLWuQundol4P70UB0Qx/mgCvOXUd0="; };
+    "aarch64-darwin" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.2/FileUni-cli-aarch64-macos-darwin.zip"; hash = "sha256-MK+00De3FeL8CnkNc6JTetCwlFgry49HHnZon3Qsyao="; };
   };
   source = sources.${stdenvNoCC.hostPlatform.system}
     or (throw "Unsupported system for FileUni: ${stdenvNoCC.hostPlatform.system}");
