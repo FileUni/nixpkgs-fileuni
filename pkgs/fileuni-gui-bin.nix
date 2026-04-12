@@ -2,10 +2,10 @@
 
 let
   pname = "fileuni-gui";
-  version = "0.1.8-alpha.1.20260412224510";
+  version = "0.1.8-alpha.2.20260413065435";
   sources = {
-    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.8-alpha.1_20260412224510/FileUni-gui-x86_64-linux-gnu.zip"; hash = "sha256-nokofNfu6awO+F+G4K6VzvOzZ1TJ/hJhA6ZxDU2nFv0="; };
-    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.8-alpha.1_20260412224510/FileUni-gui-aarch64-linux-gnu.zip"; hash = "sha256-3RXN9p7LLARa3MtxIG7B08y3uzxsRh87phqtxCdX8xg="; };
+    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.8-alpha.2_20260413065435/FileUni-gui-x86_64-linux-gnu.zip"; hash = "sha256-N5OoNrjm1jXR7p0ymvdwGOorkGZ0pzvFRkJgK3QLpSc="; };
+    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.8-alpha.2_20260413065435/FileUni-gui-aarch64-linux-gnu.zip"; hash = "sha256-xV0/SBWQy+geIw+t8oqmidIMtDaYYrCwNTOWsWYcgPA="; };
   };
   source = sources.${stdenvNoCC.hostPlatform.system}
     or (throw "Unsupported system for FileUni GUI: ${stdenvNoCC.hostPlatform.system}");
