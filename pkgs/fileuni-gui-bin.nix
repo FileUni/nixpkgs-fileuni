@@ -2,10 +2,10 @@
 
 let
   pname = "fileuni-gui";
-  version = "0.1.12";
+  version = "0.1.13";
   sources = {
-    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.12/FileUni-gui-x86_64-linux-gnu.zip"; hash = "sha256-isUuzc8k2iVLlXV2SKIs1OlrGO/w/sBiQwGzt90Hs+o="; };
-    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.12/FileUni-gui-aarch64-linux-gnu.zip"; hash = "sha256-H4wX0PatYGhG5qCwmO6KNbEguSw5mVTZlKJdq1zL/KQ="; };
+    "x86_64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.13/FileUni-gui-x86_64-linux-gnu.zip"; hash = "sha256-qITsloa/ZyBKoFaX3rfX6kA3WZbxjGZVVrc9zn8G1cg="; };
+    "aarch64-linux" = { url = "https://github.com/FileUni/FileUni-Project/releases/download/FileUni-v0.1.13/FileUni-gui-aarch64-linux-gnu.zip"; hash = "sha256-X52lUhZBzt7V9PqX3OcmWicAhKKSEPSPoW3v2p1dDfE="; };
   };
   source = sources.${stdenvNoCC.hostPlatform.system}
     or (throw "Unsupported system for FileUni GUI: ${stdenvNoCC.hostPlatform.system}");
